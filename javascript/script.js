@@ -90,6 +90,7 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
+  let passwordLength = 0;
   //Get the length of the password
   while (true) {
     passwordLength = prompt("Enter length of password (a number between 10 and 64)", "10");
@@ -105,12 +106,34 @@ function getPasswordOptions() {
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-
+  let randomIndex = Math.floor(Math.random()*(arr.length));
+  //alert(arr[randomIndex]);
+  return arr[randomIndex];
 }
 
 // Function to generate password with user input
 function generatePassword() {
-  return "abcd" + getPasswordOptions();
+  let passwordLength = getPasswordOptions();
+  let randomPassword = "";
+  for(i=0;i<passwordLength;i++){
+    //alert(i);
+    let characterType = Math.floor(Math.random()*4);
+    switch(characterType){
+      case 0:
+        randomPassword += getRandom(specialCharacters);
+        break;
+      case 1:
+        randomPassword += getRandom(numericCharacters);
+        break;
+      case 2:
+        randomPassword += getRandom(lowerCasedCharacters);
+        break;
+      case 3:
+        randomPassword += getRandom(upperCasedCharacters);
+        break;
+    }
+  }
+  return randomPassword;
 }
 
 // Get references to the #generate element

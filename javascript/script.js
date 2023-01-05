@@ -100,7 +100,7 @@ var specialCharacters = [
   
   // Function to generate password with user input
   function generatePassword() {
-  
+    return "abcd";
   }
   
   // Get references to the #generate element

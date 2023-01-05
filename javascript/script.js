@@ -101,7 +101,12 @@ function getPasswordOptions() {
       break;
     }
   }
-  return passwordLength;
+  allowUpper = confirm("Do you want UPPER CASE CHARACTERS in the password?");
+  allowLower = confirm("Do you want LOWER CASE CHARACTERS in the password?");
+  allowNumber = confirm("Do you want NUMBERS in the password?");
+  allowSpecial = confirm("Do you want SPECIAL CHARACTERS in the password?");
+
+  return [passwordLength, allowSpecial, allowNumber, allowLower, allowUpper];
 }
 
 // Function for getting a random element from an array
@@ -113,11 +118,17 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
-  let passwordLength = getPasswordOptions();
+  let passwordOptions = getPasswordOptions();
+  let passwordLength = passwordOptions[0];
   let randomPassword = "";
   for(i=0;i<passwordLength;i++){
-    //alert(i);
-    let characterType = Math.floor(Math.random()*4);
+    let characterType = 0;
+    while(true){
+      characterType = Math.floor(Math.random()*4);
+      if(passwordOptions[characterType+1]){
+        break;
+      }
+    }
     switch(characterType){
       case 0:
         randomPassword += getRandom(specialCharacters);

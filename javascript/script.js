@@ -122,6 +122,7 @@ function generatePassword() {
   let passwordLength = passwordOptions[0];
   let randomPassword = "";
   for(i=0;i<passwordLength;i++){
+    // Choose which type of character to use
     let characterType = 0;
     while(true){
       characterType = Math.floor(Math.random()*4);
@@ -129,6 +130,7 @@ function generatePassword() {
         break;
       }
     }
+    // Choose the character in the particular type
     switch(characterType){
       case 0:
         randomPassword += getRandom(specialCharacters);

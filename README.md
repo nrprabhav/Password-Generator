@@ -16,6 +16,7 @@ When the user clicks on the 'Generate Password' button the page asks for a numbe
 4. If the user wants lower case characters
 5. If the user wants numbers
 6. If the user wants special characters
+7. If the user does not allow even one of the characters, an alert is generated and the user is given the options again.
 
 ## Logic of the Code
 ### Initialize:

@@ -109,7 +109,7 @@ function getPasswordOptions() {
     if (allowUpper || allowLower || allowNumber || allowSpecial)
       return [passwordLength, allowSpecial, allowNumber, allowLower, allowUpper];
     else
-      alert("You need to allow atleast one type of character");
+      alert("You need to allow at least one type of character");
   }
 }
 

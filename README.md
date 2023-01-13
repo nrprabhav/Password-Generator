@@ -50,5 +50,8 @@ When the user clicks on the 'Generate Password' button the page asks for a numbe
 ### Prompt for password options (one example)
 ![](./images/passwordOptions.PNG)
 
+### Alert when none of the options are selected
+![](./images/alertType.PNG)
+
 ### Password filled out
 ![](./images/passwordFilled.PNG)
